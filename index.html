@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" as="style">
+<style>
+
+  
+  .usecase-mask {
+      overflow-x: auto !important;
+      overflow-y: hidden !important
+  }
+
+  .usecase-container {
+      display: inline-flex !important;
+      justify-content: start !important;
+      display: inline-flex !important;
+      width: 100%
+  }
+
+  .socialicon ul li,
+  .usecase-block {
+      display: inline-block
+  }
+
+  .expand .expansion .usecase-audio-spectrum,
+  .expansion .usecase-audio-spectrum {
+      width: 100%
+  }
+
+  .expand .expansion {
+      opacity: 1;
+      width: 100%
+  }
+
+  .spacer {
+      flex: 1 1 auto
+  }
+
+  .lg {
+      height: 373px
+  }
+
+  .usecase-subtitle,
+  .usecase-title {
+      font-weight: 500;
+      height: 48px;
+      order: 1;
+      margin-bottom: 8px;
+      text-align: center
+  }
+
+
+
+  .usecase-block {
+      margin-right: 13px;
+      margin-left: 13px;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-align-self: center;
+      -ms-flex-item-align: center;
+      align-self: center;
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+      flex: 0 0 auto;
+      border-radius: 15px;
+      background-color: #b8d6ff;
+      box-shadow: 0 2px 4px -2px rgb(23 37 69/12%);
+      -webkit-transition: box-shadow .2s, height .5s, width .5s;
+      transition: box-shadow .3s, height .3s, width .3s;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden
+  }
+
+  .usecase-layout,
+  .usecase-target {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox
+  }
+
+  .usecase-container,
+  .usecase-mask {
+      margin-right: auto;
+      margin-left: auto
+  }
+
+  .usecase-title {
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+      flex: 0 0 auto;
+      font-family: avertastd-bold;
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+      flex: 0 0 auto;
+      margin-top: 8%;
+      transition: .2s ease-in;
+      margin-left: 4%
+  }
+
+  .usecase-subtitle {
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+      flex: 0 0 auto;
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+      flex: 0 0 auto;
+      margin-top: 3%;
+      padding: 0 15px;
+      font-size: 14px;
+      opacity: 1;
+      color: #e1eefd
+  }
+
+  .uc-play {
+      height: 66px;
+      margin-top: 0;
+      -webkit-align-self: center;
+      -ms-flex-item-align: center;
+      align-self: center;
+      -webkit-box-ordinal-group: 2;
+      -webkit-order: 1;
+      -ms-flex-order: 1;
+      order: 1;
+      -ms-flex: 0 0 auto;
+      background-image: url(https://revoicer.com/imageswebp/playIcon2.webp);
+      -webkit-align-self: center;
+      -ms-flex-item-align: center;
+      align-self: center;
+      -webkit-box-ordinal-group: 2;
+      -webkit-order: 1;
+      -ms-flex-order: 1;
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+      flex: 0 0 auto;
+      background-position: 16% 50%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 100%;
+      transition: .2s ease-in;
+      z-index: 1
+  }
+
+  .expand .uc-play {
+      background-image: url(https://revoicer.com/imageswebp/pushIcon2.webp)
+  }
+
+  .usecase-target {
+      position: relative;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      height: 240px;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -ms-flex-pack: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+      flex: 0 0 auto;
+      margin-top: 5px
+  }
+
+  .expansion {
+      padding: 14px 30px 54px 10px;
+
+      width: 330px;
+      opacity: 0
+  }
+
+  .usecase-text-block {
+      overflow: hidden;
+      line-height: 24px;
+      color: #fff;
+      font-family: avertastd-bold;
+      margin-left: auto;
+      margin-top: 59px;
+      position: relative;
+      z-index: 1
+  }
+
+  .usecase-mask {
+      position: relative;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      overflow: auto;
+      width: 100%;
+      height: 400px;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center
+  }
+
+  .usecase-layout {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      padding: 22px 0;
+      cursor: pointer
+  }
+
+  .icon1 {
+      position: absolute;
+      right: 9%;
+      top: 4.1%;
+      opacity: 1;
+      transition: opacity .3s ease-in .2s
+  }
+
+  .usecase-block.expand .icon1 {
+      opacity: 0;
+      transition: width .3s ease-in .2s
+  }
+
+  .usecase-block.expand .usecase-subtitle {
+      opacity: 0
+  }
+
+  @media screen and (max-width:991px) {
+      .usecase-title {
+          padding-right: 12px;
+          padding-left: 12px;
+          font-size: 14px;
+          line-height: 21px
+      }
+  }
+
+  #bars,
+  #bars2,
+  #bars3,
+  #bars4,
+  #bars5,
+  #bars6 {
+      position: relative;
+      top: 50%;
+      left: 10%;
+      height: 14px;
+      width: 60%
+  }
+
+  .bar-line,
+  .bar-line2,
+  .bar-line3,
+  .bar-line4,
+  .bar-line5,
+  .bar-line6 {
+      position: absolute;
+      bottom: 0;
+      height: 3px;
+      width: 1px;
+      background: #fff;
+      animation: 0s linear -.8s infinite alternate sound;
+      transform: translateY(50%)
+  }
+
+  @keyframes sound {
+      0% {
+          opacity: .35;
+          height: 3px
+      }
+      100% {
+          opacity: 1;
+          height: 28px
+      }
+  }
+
+  .section3 {
+      background-color: #050038;
+      padding: 5% 0;
+      max-width: 97%;
+      margin: 7% auto auto;
+      border-radius: 30px
+  }
+
+  .usecase-avatar {
+      order: 2;
+      margin-top: 8%;
+      margin-left: -28%
+  }
+
+  .section3 ::-webkit-scrollbar {
+      height: 4px;
+      width: 4px;
+      background: #848484
+  }
+
+  .section3 ::-webkit-scrollbar-track {
+      background: #fff
+  }
+
+  .section3 ::-webkit-scrollbar-thumb {
+      background: #848484
+  }
+
+  .section3 ::-webkit-scrollbar-thumb:hover {
+      background: #848484
+  }
+
+  .section3 ::-webkit-scrollbar-thumb:horizontal {
+      background: #848484;
+      border-radius: 10px
+  }
+
+  @media only screen and (max-width:993px) {
+
+
+
+      .expansion {
+          padding: 14px 15px 54px
+      }
+      .usecase-text-block {
+          line-height: 18px;
+          margin-top: 70px
+      }
+      .usecase-1 .usecase-text-block {
+          background-color: #67abff
+      }
+      .usecase-2 .usecase-text-block {
+          background-color: #7673fe
+      }
+      .usecase-3 .usecase-text-block {
+          background-color: #e9724d
+      }
+      .usecase-4 .usecase-text-block {
+          background-color: #e1914a
+      }
+      .usecase-5 .usecase-text-block {
+          background-color: #74bf4b
+      }
+      .usecase-6 .usecase-text-block {
+          background-color: #ff5474
+      }
+      #bars,
+      #bars2,
+      #bars3,
+      #bars4,
+      #bars5,
+      #bars6 {
+          top: 50%;
+          left: 30%;
+          height: 12px;
+          width: 60%
+      }
+      
+  }
+
+  @media only screen and (max-width:575.98px) {
+      .usecase-block {
+          margin-right: 10px;
+          margin-left: 10px
+      }
+  }
+
+  @media(min-width:240px) {
+
+      .usecase-text-block,
+      .usecase-title {
+          font-size: 14px
+      }
+
+      .usecase-block,
+      .usecase-target {
+          width: 170px
+      }
+      .usecase-block.expand {
+          width: 525px
+      }
+      .usecase-title {
+          line-height: 123%;
+          margin-left: 0
+      }
+      #bars,
+      #bars2,
+      #bars3,
+      #bars4,
+      #bars5,
+      #bars6 {
+          margin: 0 0 48px;
+          transform: scale(1.8) translateX(46%)
+      }
+  }
+
+  @media(min-width:480px) {
+
+      .usecase-block,
+      .usecase-target {
+          width: 170px
+      }
+      .usecase-block.expand {
+          width: 525px
+      }
+      .usecase-title {
+          font-size: 20px;
+          line-height: 123%
+      }
+      .usecase-text-block {
+          font-size: 14px
+      }
+      #bars,
+      #bars2,
+      #bars3,
+      #bars4,
+      #bars5,
+      #bars6 {
+          margin: 0 0 64px;
+          transform: scale(2) translateX(50%)
+      }
+  }
+
+  @media only screen and (min-width:768px) {
+
+      .usecase-block,
+      .usecase-target {
+          width: 170px
+      }
+      .usecase-block.expand {
+          width: 525px
+      }
+      .usecase-title {
+          font-size: 15px;
+          line-height: 123%;
+          margin-left: 0
+      }
+      #bars,
+      #bars2,
+      #bars3,
+      #bars4,
+      #bars5,
+      #bars6 {
+          margin: 0 0 48px;
+          transform: scale(2) translateX(-11%)
+      }
+
+  }
+
+  @media only screen and (min-width:992px) {
+
+      .usecase-block,
+      .usecase-target {
+          width: 170px
+      }
+      .usecase-block.expand {
+          width: 525px
+      }
+      .usecase-title {
+          font-size: 16px;
+          line-height: 123%;
+          margin-left: 0
+      }
+      .usecase-text-block {
+          font-size: 14px
+      }
+      #bars,
+      #bars2,
+      #bars3,
+      #bars4,
+      #bars5,
+      #bars6 {
+          margin: 0 0 48px;
+          transform: scale(2) translateX(-10%)
+      }
+  }
+
+  @media only screen and (min-width:1000px) {
+      .usecase-block,
+      .usecase-target {
+          width: 170px
+      }
+      .usecase-block.expand {
+          width: 525px
+      }
+      .usecase-title {
+          font-size: 16px;
+          line-height: 123%;
+          margin-left: 0
+      }
+      .usecase-text-block {
+          font-size: 14px
+      }
+      #bars,
+      #bars2,
+      #bars3,
+      #bars4,
+      #bars5,
+      #bars6 {
+          margin: 0 0 48px;
+          transform: scale(2) translateX(4%)
+      }
+  }
+
+  @media only screen and (min-width:1100px) {
+
+      .usecase-block,
+      .usecase-target {
+          width: 170px
+      }
+      .usecase-block.expand {
+          width: 525px
+      }
+      .usecase-title {
+          font-size: 16px;
+          line-height: 123%;
+          margin-left: 0
+      }
+      .usecase-text-block {
+          font-size: 14px
+      }
+      #bars,
+      #bars2,
+      #bars3,
+      #bars4,
+      #bars5,
+      #bars6 {
+          margin: 0 0 48px;
+          transform: scale(2) translateX(2%)
+      }
+  }
+
+  @media only screen and (min-width:1200px) {
+
+      .usecase-block,
+      .usecase-target {
+          width: 170px
+      }
+      .usecase-block.expand {
+          width: 525px
+      }
+      .usecase-title {
+          font-size: 16px;
+          line-height: 123%;
+          margin-left: 0
+      }
+      #bars,
+      #bars2,
+      #bars3,
+      #bars4,
+      #bars5,
+      #bars6 {
+          margin: 0 0 48px;
+          transform: scale(2) translateX(2%)
+      }
+  }
+
+  @media(min-width:1300px) {
+      .usecase-block,
+      .usecase-target {
+          width: 170px
+      }
+      .usecase-block.expand {
+          width: 525px
+      }
+      .usecase-title {
+          font-size: 17px;
+          line-height: 123%;
+          margin-left: 0
+      }
+      .usecase-text-block {
+          font-size: 14px
+      }
+      #bars,
+      #bars2,
+      #bars3,
+      #bars4,
+      #bars5,
+      #bars6 {
+          margin: 0 0 48px;
+          transform: scale(2) translateX(2%)
+      }
+  }
+
+  @media(min-width:1400px) {
+
+      .usecase-block,
+      .usecase-target {
+          width: 185px
+      }
+      .usecase-block.expand {
+          width: 525px
+      }
+      .usecase-title {
+          font-size: 17px;
+          line-height: 123%;
+          margin-left: 0
+      }
+      .usecase-text-block {
+          font-size: 14px
+      }
+      #bars,
+      #bars2,
+      #bars3,
+      #bars4,
+      #bars5,
+      #bars6 {
+          margin: 0 0 48px;
+          transform: scale(2) translateX(0)
+      }
+     
+  }
+</style>
+</head>
+<body>
+
+  <div class="section3 reveal">
+    <div class="mycontainer2">
+    <div class="row justify-content-center">
+    <div class="col-12 text-center">
+    <p class="lg18 md18 sm14 xs14 AvertaStd-Regular lh170 text-white">
+    Revoicer Allows Anyone, Regardless Of Technical Or Language Skills To Create… The most realistic text to speech voice overs possible!
+    </p>
+    <h4 class="lg44 md40 sm30 xs24 AvertaStd-Bold lh120 mt1 text-capitalize text-white">
+    Revoicer is <span class="voiceline4 AvertaStd-Bold"> perfect <img src="https://revoicer.com/imageswebp/voiceline4.webp" class="img-fluid center-block voiceline4-img" alt="arrow"> </span> for:
+    </h4>
+    </div>
+    </div>
+    </div>
+    <div class="container-fluid">
+    <div class="row justify-content-center mt5">
+    
+    <div class="usecase-mask w-dyn-list"><div role="list" class="usecase-container w-dyn-items"><div class="spacer"></div>
+    <div data-event-label="UseCaseModule" data-event-category="Interaction" data-event-action="Click" style="background-color:#67abff" role="listitem" class="usecase-block ga-event w-dyn-item lg usecase-1" id="uc-0">
+    <div class="usecase-layout">
+    <div class="usecase-target">
+    <div class="uc-play uc-pause"></div>
+    <img src="https://revoicer.com/imageswebp/icon1.webp" alt="icon" class="icon1">
+    <img src="https://revoicer.com/imageswebp/perfect1Img.webp" loading="eager" alt="Product Developer" class="usecase-avatar">
+    <div class="usecase-title AvertaStd-Bold text-white topspc">Marketers</div>
+    <div class="usecase-subtitle AvertaStd-Regular">Test 2-3 different voices for each project and find the highest converting version.</div>
+    </div>
+    <div class="expansion">
+    <div class="usecase-ac-embed w-embed">
+    <div id="bars"></div>
+    <audio preload="none" class="usecase-audio" id="ua-1" crossorigin="anonymous">
+    <source src="a.mp3" type="audio/mpeg">
+    </source></audio>
+    </div>
+    <div class="usecase-text-block">With Revoicer you not only work faster… but smarter too. No more outsourcing and waiting days for your audio files . You can put your vision into action with only a few clicks. Test 2-3 different voices for each project and find the highest converting version.</div>
+    </div>
+    </div>
+    </div>
+    <div data-event-label="UseCaseModule" data-event-category="Interaction" data-event-action="Click" style="background-color:#7673fe" role="listitem" class="usecase-block ga-event w-dyn-item lg usecase-2" id="uc-1">
+    <div class="usecase-layout">
+    <div class="usecase-target">
+    <div class="uc-play uc-pause"></div>
+    <img src="https://revoicer.com/imageswebp/icon2.webp" alt="icon" class="icon1">
+    <img src="https://revoicer.com/imageswebp/perfect2Img.webp" loading="eager" alt="Product Developer" class="usecase-avatar">
+    <div class="usecase-title AvertaStd-Bold text-white">Teachers &amp;  Students</div>
+    <div class="usecase-subtitle AvertaStd-Regular">Convert any lesson into an engaging audio or video. Your lessons will be more engaging, captivating and easier to follow.</div>
+    </div>
+    <div class="expansion">
+    <div class="usecase-ac-embed w-embed">
+    <div id="bars2"></div>
+    <audio preload="none" class="usecase-audio" id="ua-1" crossorigin="anonymous">
+    <source src="b.mp3" type="audio/mpeg">
+    </source></audio>
+    </div>
+    <div class="usecase-text-block">With Revoicer, you can easily convert any lesson into an engaging audio or video. Your lessons will be more engaging, captivating and easier to follow. Students can listen to the lesson wherever they are, traveling to work or relaxing at home.</div>
+    </div>
+    </div>
+    </div>
+    <div data-event-label="UseCaseModule" data-event-category="Interaction" data-event-action="Click" style="background-color:#e9724d" role="listitem" class="usecase-block ga-event w-dyn-item lg usecase-3" id="uc-2">
+    <div class="usecase-layout">
+    <div class="usecase-target">
+    <div class="uc-play uc-pause"></div>
+    <img src="https://revoicer.com/imageswebp/icon3.webp" alt="icon" class="icon1">
+    <img src="https://revoicer.com/imageswebp/perfect3Img.webp" loading="eager" alt="Product Developer" class="usecase-avatar">
+    <div class="usecase-title AvertaStd-Bold text-white topspc">Authors</div>
+    <div class="usecase-subtitle AvertaStd-Regular">Audio books are becoming more and more popular, transform your books into...</div>
+    </div>
+    <div class="expansion">
+    <div class="usecase-ac-embed w-embed">
+    <div id="bars3"></div>
+    <audio preload="none" class="usecase-audio" id="ua-1" crossorigin="anonymous">
+    <source src="c.mp3" type="audio/mpeg"></source>
+    </audio>
+    </div>
+    <div class="usecase-text-block">Since the dawn of time people would gather around the fire and listen to stories… We as humans are used to HEARING stories, the reason why audio books are becoming more and more popular.Thanks to Revoicer creating engaging audio books is as simple as selecting a voice, pasting the text, and hitting render.</div>
+    </div>
+    </div>
+    </div>
+    <div data-event-label="UseCaseModule" data-event-category="Interaction" data-event-action="Click" style="background-color:#e1914a" role="listitem" class="usecase-block ga-event w-dyn-item lg usecase-4" id="uc-3">
+    <div class="usecase-layout">
+    <div class="usecase-target">
+    <div class="uc-play uc-pause"></div>
+    <img src="https://revoicer.com/imageswebp/icon4.webp" alt="icon" class="icon1">
+    <img src="https://revoicer.com/imageswebp/perfect4Img.webp" loading="eager" alt="Product Developer" class="usecase-avatar">
+    <div class="usecase-title AvertaStd-Bold text-white">Customer  Support</div>
+    <div class="usecase-subtitle AvertaStd-Regular">Revoicer makes the whole customer support experience more fulfilling</div>
+    </div>
+    <div class="expansion">
+    <div class="usecase-ac-embed w-embed">
+    <div id="bars4"></div>
+    <audio preload="none" class="usecase-audio" id="ua-1" crossorigin="anonymous">
+    <source src="d.mp3" type="audio/mpeg">
+    </source></audio>
+    </div>
+    <div class="usecase-text-block">With Revoicer, you can create pre-recorded voiceovers for your Frequently Asked Questions in your Support Desk platform or webssite. Your customers will feel as if you are replying to them personally, making the whole customer support experience more fulfilling for everyone involved.</div>
+    </div>
+    </div>
+    </div>
+    <div data-event-label="UseCaseModule" data-event-category="Interaction" data-event-action="Click" style="background-color:#74bf4b" role="listitem" class="usecase-block ga-event w-dyn-item lg usecase-5" id="uc-4">
+    <div class="usecase-layout">
+    <div class="usecase-target">
+    <div class="uc-play uc-pause"></div>
+    <img src="https://revoicer.com/imageswebp/icon5.webp" alt="icon" class="icon1">
+    <img src="https://revoicer.com/imageswebp/perfect5Img.webp" loading="eager" alt="Product Developer" class="usecase-avatar">
+    <div class="usecase-title AvertaStd-Bold text-white">Product  Developers</div>
+    <div class="usecase-subtitle AvertaStd-Regular">Demo and Help videos are an essential part of a good product.</div>
+    </div>
+    <div class="expansion">
+    <div class="usecase-ac-embed w-embed">
+    <div id="bars5"></div>
+    <audio preload="none" class="usecase-audio" id="ua-1" crossorigin="anonymous">
+    <source src="e.mp3" type="audio/mpeg">
+    </source></audio>
+    </div>
+    <div class="usecase-text-block">With Revoicer, product developers can easily create voiceovers for their Sales Pages, Demos and Training videos.
+    Whether it’s to improve the user experience or explain new features, Demo and Help videos are an essential part of a good product.
+    Revoicer makes creating voiceovers easy and fast, so you can focus on what’s important – making great products.</div>
+    </div>
+    </div>
+    </div>
+    <div data-event-label="UseCaseModule" data-event-category="Interaction" data-event-action="Click" style="background-color:#ff5474" role="listitem" class="usecase-block ga-event w-dyn-item lg usecase-6" id="uc-5">
+    <div class="usecase-layout">
+    <div class="usecase-target">
+    <div class="uc-play uc-pause"></div>
+    <img src="https://revoicer.com/imageswebp/icon6.webp" alt="icon" class="icon1">
+    <img src="https://revoicer.com/imageswebp/perfect6Img.webp" loading="eager" alt="Product Developer" class="usecase-avatar">
+    <div class="usecase-title AvertaStd-Bold text-white topspc">Podcasters</div>
+    <div class="usecase-subtitle AvertaStd-Regular">Create podcast voiceovers with only 3 clicks...</div>
+    </div>
+    <div class="expansion">
+    <div class="usecase-ac-embed w-embed">
+    <div id="bars6"></div>
+    <audio preload="none" class="usecase-audio" id="ua-1" crossorigin="anonymous">
+    <source src="f.mp3" type="audio/mpeg">
+    </source></audio>
+    </div>
+    <div class="usecase-text-block">During the Covid crisis podcast audiences exploded, increasing by whopping 300%!
+    The problem with podcasts is that it takes time and effort to find the right gears and set up the perfect recording environment.
+    But with Revoicer, all those headaches are things of the past.
+    you can now easily create podcast voiceovers that sound great regardless of the recording conditions and with only 3 clicks!</div>
+    </div>
+    </div>
+    </div>
+    <div class="spacer"></div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  /*!lazysizes - v5.3.2*/!function(e){var t=function(e,t,a){"use strict";var i,o;if(function(){var t,a={lazyClass:"lazyload",loadedClass:"lazyloaded",loadingClass:"lazyloading",preloadClass:"lazypreload",errorClass:"lazyerror",autosizesClass:"lazyautosizes",fastLoadedClass:"ls-is-cached",iframeLoadMode:0,srcAttr:"data-src",srcsetAttr:"data-srcset",sizesAttr:"data-sizes",minSize:40,customMedia:{},init:!0,expFactor:1.5,hFac:.8,loadMode:2,loadHidden:!0,ricTimeout:0,throttleDelay:125};for(t in o=e.lazySizesConfig||e.lazysizesConfig||{},a)t in o||(o[t]=a[t])}(),!t||!t.getElementsByClassName)return{init:function(){},cfg:o,noSupport:!0};var n=t.documentElement,s=e.HTMLPictureElement,r="addEventListener",l="getAttribute",c=e[r].bind(e),d=e.setTimeout,u=e.requestAnimationFrame||d,p=e.requestIdleCallback,f=/^picture$/i,m=["load","error","lazyincluded","_lazyloaded"],h={},v=Array.prototype.forEach,g=function(e,t){return h[t]||(h[t]=new RegExp("(\\s|^)"+t+"(\\s|$)")),h[t].test(e[l]("class")||"")&&h[t]},y=function(e,t){g(e,t)||e.setAttribute("class",(e[l]("class")||"").trim()+" "+t)},$=function(e,t){var a;(a=g(e,t))&&e.setAttribute("class",(e[l]("class")||"").replace(a," "))},b=function(e,t,a){var i=a?r:"removeEventListener";a&&b(e,t),m.forEach((function(a){e[i](a,t)}))},C=function(e,a,o,n,s){var r=t.createEvent("Event");return o||(o={}),o.instance=i,r.initEvent(a,!n,!s),r.detail=o,e.dispatchEvent(r),r},_=function(t,a){var i;!s&&(i=e.picturefill||o.pf)?(a&&a.src&&!t[l]("srcset")&&t.setAttribute("srcset",a.src),i({reevaluate:!0,elements:[t]})):a&&a.src&&(t.src=a.src)},z=function(e,t){return(getComputedStyle(e,null)||{})[t]},w=function(e,t,a){for(a=a||e.offsetWidth;a<o.minSize&&t&&!e._lazysizesWidth;)a=t.offsetWidth,t=t.parentNode;return a},E=function(){var e,a,i=[],o=[],n=i,s=function(){var t=n;for(n=i.length?o:i,e=!0,a=!1;t.length;)t.shift()();e=!1},r=function(i,o){e&&!o?i.apply(this,arguments):(n.push(i),a||(a=!0,(t.hidden?d:u)(s)))};return r._lsFlush=s,r}(),k=function(e,t){return t?function(){E(e)}:function(){var t=this,a=arguments;E((function(){e.apply(t,a)}))}},x=function(e){var t,i=0,n=o.throttleDelay,s=o.ricTimeout,r=function(){t=!1,i=a.now(),e()},l=p&&s>49?function(){p(r,{timeout:s}),s!==o.ricTimeout&&(s=o.ricTimeout)}:k((function(){d(r)}),!0);return function(e){var o;(e=!0===e)&&(s=33),t||(t=!0,(o=n-(a.now()-i))<0&&(o=0),e||o<9?l():d(l,o))}},A=function(e){var t,i,o=function(){t=null,e()},n=function(){var e=a.now()-i;e<99?d(n,99-e):(p||o)(o)};return function(){i=a.now(),t||(t=d(n,99))}},P=function(){var s,p,m,h,w,P,B,M,R,N,S,T,D=/^img$/i,W=/^iframe$/i,q="onscroll"in e&&!/(gle|ing)bot/.test(navigator.userAgent),I=0,j=0,F=-1,O=function(e){j--,(!e||j<0||!e.target)&&(j=0)},H=function(e){return null==T&&(T="hidden"==z(t.body,"visibility")),T||!("hidden"==z(e.parentNode,"visibility")&&"hidden"==z(e,"visibility"))},Q=function(e,a){var i,o=e,s=H(e);for(M-=a,S+=a,R-=a,N+=a;s&&(o=o.offsetParent)&&o!=t.body&&o!=n;)(s=(z(o,"opacity")||1)>0)&&"visible"!=z(o,"overflow")&&(i=o.getBoundingClientRect(),s=N>i.left&&R<i.right&&S>i.top-1&&M<i.bottom+1);return s},J=function(){var e,a,r,c,d,u,f,m,v,g,y,$,b=i.elements;if((h=o.loadMode)&&j<8&&(e=b.length)){for(a=0,F++;a<e;a++)if(b[a]&&!b[a]._lazyRace)if(!q||i.prematureUnveil&&i.prematureUnveil(b[a]))Z(b[a]);else if((m=b[a][l]("data-expand"))&&(u=1*m)||(u=I),g||(g=!o.expand||o.expand<1?n.clientHeight>500&&n.clientWidth>500?500:370:o.expand,i._defEx=g,y=g*o.expFactor,$=o.hFac,T=null,I<y&&j<1&&F>2&&h>2&&!t.hidden?(I=y,F=0):I=h>1&&F>1&&j<6?g:0),v!==u&&(P=innerWidth+u*$,B=innerHeight+u,f=-1*u,v=u),r=b[a].getBoundingClientRect(),(S=r.bottom)>=f&&(M=r.top)<=B&&(N=r.right)>=f*$&&(R=r.left)<=P&&(S||N||R||M)&&(o.loadHidden||H(b[a]))&&(p&&j<3&&!m&&(h<3||F<4)||Q(b[a],u))){if(Z(b[a]),d=!0,j>9)break}else!d&&p&&!c&&j<4&&F<4&&h>2&&(s[0]||o.preloadAfterLoad)&&(s[0]||!m&&(S||N||R||M||"auto"!=b[a][l](o.sizesAttr)))&&(c=s[0]||b[a]);c&&!d&&Z(c)}},X=x(J),Y=function(e){var t=e.target;t._lazyCache?delete t._lazyCache:(O(e),y(t,o.loadedClass),$(t,o.loadingClass),b(t,U),C(t,"lazyloaded"))},G=k(Y),U=function(e){G({target:e.target})},K=function(e){var t,a=e[l](o.srcsetAttr);(t=o.customMedia[e[l]("data-media")||e[l]("media")])&&e.setAttribute("media",t),a&&e.setAttribute("srcset",a)},V=k((function(e,t,a,i,n){var s,r,c,u,p,h;(p=C(e,"lazybeforeunveil",t)).defaultPrevented||(i&&(a?y(e,o.autosizesClass):e.setAttribute("sizes",i)),r=e[l](o.srcsetAttr),s=e[l](o.srcAttr),n&&(u=(c=e.parentNode)&&f.test(c.nodeName||"")),h=t.firesLoad||"src"in e&&(r||s||u),p={target:e},y(e,o.loadingClass),h&&(clearTimeout(m),m=d(O,2500),b(e,U,!0)),u&&v.call(c.getElementsByTagName("source"),K),r?e.setAttribute("srcset",r):s&&!u&&(W.test(e.nodeName)?function(e,t){var a=e.getAttribute("data-load-mode")||o.iframeLoadMode;0==a?e.contentWindow.location.replace(t):1==a&&(e.src=t)}(e,s):e.src=s),n&&(r||u)&&_(e,{src:s})),e._lazyRace&&delete e._lazyRace,$(e,o.lazyClass),E((function(){var t=e.complete&&e.naturalWidth>1;h&&!t||(t&&y(e,o.fastLoadedClass),Y(p),e._lazyCache=!0,d((function(){"_lazyCache"in e&&delete e._lazyCache}),9)),"lazy"==e.loading&&j--}),!0)})),Z=function(e){if(!e._lazyRace){var t,a=D.test(e.nodeName),i=a&&(e[l](o.sizesAttr)||e[l]("sizes")),n="auto"==i;(!n&&p||!a||!e[l]("src")&&!e.srcset||e.complete||g(e,o.errorClass)||!g(e,o.lazyClass))&&(t=C(e,"lazyunveilread").detail,n&&L.updateElem(e,!0,e.offsetWidth),e._lazyRace=!0,j++,V(e,t,n,i,a))}},ee=A((function(){o.loadMode=3,X()})),te=function(){3==o.loadMode&&(o.loadMode=2),ee()},ae=function(){p||(a.now()-w<999?d(ae,999):(p=!0,o.loadMode=3,X(),c("scroll",te,!0)))};return{_:function(){w=a.now(),i.elements=t.getElementsByClassName(o.lazyClass),s=t.getElementsByClassName(o.lazyClass+" "+o.preloadClass),c("scroll",X,!0),c("resize",X,!0),c("pageshow",(function(e){if(e.persisted){var a=t.querySelectorAll("."+o.loadingClass);a.length&&a.forEach&&u((function(){a.forEach((function(e){e.complete&&Z(e)}))}))}})),e.MutationObserver?new MutationObserver(X).observe(n,{childList:!0,subtree:!0,attributes:!0}):(n[r]("DOMNodeInserted",X,!0),n[r]("DOMAttrModified",X,!0),setInterval(X,999)),c("hashchange",X,!0),["focus","mouseover","click","load","transitionend","animationend"].forEach((function(e){t[r](e,X,!0)})),/d$|^c/.test(t.readyState)?ae():(c("load",ae),t[r]("DOMContentLoaded",X),d(ae,2e4)),i.elements.length?(J(),E._lsFlush()):X()},checkElems:X,unveil:Z,_aLSL:te}}(),L=function(){var e,a=k((function(e,t,a,i){var o,n,s;if(e._lazysizesWidth=i,i+="px",e.setAttribute("sizes",i),f.test(t.nodeName||""))for(n=0,s=(o=t.getElementsByTagName("source")).length;n<s;n++)o[n].setAttribute("sizes",i);a.detail.dataAttr||_(e,a.detail)})),i=function(e,t,i){var o,n=e.parentNode;n&&(i=w(e,n,i),(o=C(e,"lazybeforesizes",{width:i,dataAttr:!!t})).defaultPrevented||(i=o.detail.width)&&i!==e._lazysizesWidth&&a(e,n,o,i))},n=A((function(){var t,a=e.length;if(a)for(t=0;t<a;t++)i(e[t])}));return{_:function(){e=t.getElementsByClassName(o.autosizesClass),c("resize",n)},checkElems:n,updateElem:i}}(),B=function(){!B.i&&t.getElementsByClassName&&(B.i=!0,L._(),P._())};return d((function(){o.init&&B()})),i={cfg:o,autoSizer:L,loader:P,init:B,uP:_,aC:y,rC:$,hC:g,fire:C,gW:w,rAF:E}}(e,e.document,Date);e.lazySizes=t,"object"==typeof module&&module.exports&&(module.exports=t)}("undefined"!=typeof window?window:{}),function(e,t){var a=function(){t(e.lazySizes),e.removeEventListener("lazyunveilread",a,!0)};t=t.bind(null,e,e.document),"object"==typeof module&&module.exports?t(require("lazysizes")):"function"==typeof define&&define.amd?define(["lazysizes"],t):e.lazySizes?a():e.addEventListener("lazyunveilread",a,!0)}(window,(function(e,t,a){"use strict";var i,o,n={};function s(e,a,i){var o,s;n[e]||(o=t.createElement(a?"link":"script"),s=t.getElementsByTagName("script")[0],a?(o.rel="stylesheet",o.href=e):(o.onload=function(){o.onerror=null,o.onload=null,i()},o.onerror=o.onload,o.src=e),n[e]=!0,n[o.src||o.href]=!0,s.parentNode.insertBefore(o,s))}t.addEventListener&&(i=function(e,a){var i=t.createElement("img");i.onload=function(){i.onload=null,i.onerror=null,i=null,a()},i.onerror=i.onload,i.src=e,i&&i.complete&&i.onload&&i.onload()},addEventListener("lazybeforeunveil",(function(e){var t,n,r;if(e.detail.instance==a&&!e.defaultPrevented){var l=e.target;if("none"==l.preload&&(l.preload=l.getAttribute("data-preload")||"auto"),null!=l.getAttribute("data-autoplay"))if(l.getAttribute("data-expand")&&!l.autoplay)try{l.play()}catch(e){}else requestAnimationFrame((function(){l.setAttribute("data-expand","-10"),a.aC(l,a.cfg.lazyClass)}));(t=l.getAttribute("data-link"))&&s(t,!0),(t=l.getAttribute("data-script"))&&(e.detail.firesLoad=!0,s(t,null,(function(){e.detail.firesLoad=!1,a.fire(l,"_lazyloaded",{},!0,!0)}))),(t=l.getAttribute("data-require"))&&(a.cfg.requireJs?a.cfg.requireJs([t]):s(t)),(n=l.getAttribute("data-bg"))&&(e.detail.firesLoad=!0,i(n,(function(){l.style.backgroundImage="url("+(o.test(n)?JSON.stringify(n):n)+")",e.detail.firesLoad=!1,a.fire(l,"_lazyloaded",{},!0,!0)}))),(r=l.getAttribute("data-poster"))&&(e.detail.firesLoad=!0,i(r,(function(){l.poster=r,e.detail.firesLoad=!1,a.fire(l,"_lazyloaded",{},!0,!0)})))}}),!(o=/\(|\)|\s|'/)))}));const Confetti=(()=>{"use strict";let e,t,a=75,i=25,o=1,n=!1,s=!0,r=[],l=(new Date).getTime();function c(i){if(e=document.createElement("canvas"),t=e.getContext("2d"),e.width=2*window.innerWidth,e.height=2*window.innerHeight,e.style.position="fixed",e.style.top=0,e.style.left=0,e.style.width="calc(100%)",e.style.height="calc(100%)",e.style.margin=0,e.style.padding=0,e.style.zIndex=999999999,e.style.pointerEvents="none",document.body.appendChild(e),null!=i){let e=document.getElementById(i);null!=e&&e.addEventListener("click",(e=>{!function(e,t){let i=[];for(let o=0;o<a;o++)i.push(u(e,t));r.push({particles:i})}(2*e.clientX,2*e.clientY),s&&(e.target.style.visibility="")}))}window.addEventListener("resize",(()=>{e.width=2*window.innerWidth,e.height=2*window.innerHeight}))}function d(e){return e.pos.y-2*e.size.x>2*window.innerHeight}function u(e,t){let a=(16*Math.random()+4)*o,i=(4*Math.random()+4)*o;return{pos:{x:e-a/2,y:t-i/2},vel:p(),size:{x:a,y:i},rotation:360*Math.random(),rotation_speed:10*(Math.random()-.5),hue:360*Math.random(),opacity:100,lifetime:Math.random()+.25}}function p(){let e=Math.random()-.5,t=Math.random()-.7,a=Math.sqrt(e*e+t*t);return t/=a,{x:(e/=a)*(Math.random()*i),y:t*(Math.random()*i)}}return c.prototype.setCount=e=>{"number"==typeof e?a=e:console.error("[ERROR] Confetti.setCount() - Input needs to be of type 'number'")},c.prototype.setPower=e=>{"number"==typeof e?i=e:console.error("[ERROR] Confetti.setPower() - Input needs to be of type 'number'")},c.prototype.setSize=e=>{"number"==typeof e?o=e:console.error("[ERROR] Confetti.setSize() - Input needs to be of type 'number'")},c.prototype.setFade=e=>{"boolean"==typeof e?n=e:console.error("[ERROR] Confetti.setFade() - Input needs to be of type 'boolean'")},c.prototype.destroyTarget=e=>{"boolean"==typeof e?s=e:console.error("[ERROR] Confetti.destroyTarget() - Input needs to be of type 'boolean'")},window.requestAnimationFrame((function e(a){let i=(a-l)/1e3;l=a;for(let e=r.length-1;e>=0;e--){let t=r[e];for(let e=t.particles.length-1;e>=0;e--){let a=t.particles[e];a.vel.y+=a.size.y/(10*o)*10*i,a.vel.x+=25*(Math.random()-.5)*i,a.vel.x*=.98,a.vel.y*=.98,a.pos.x+=a.vel.x,a.pos.y+=a.vel.y,a.rotation+=a.rotation_speed,n&&(a.opacity-=a.lifetime),d(a)&&t.particles.splice(e,1)}0==t.particles.length&&r.splice(e,1)}!function(){t.clearRect(0,0,2*window.innerWidth,2*window.innerHeight);for(const c of r)for(const r of c.particles)e=r.pos.x,a=r.pos.y,i=r.size.x,o=r.size.y,n=r.rotation,s=r.hue,l=r.opacity,t.save(),t.beginPath(),t.translate(e+i/2,a+o/2),t.rotate(n*Math.PI/180),t.rect(-i/2,-o/2,i,o),t.fillStyle=`hsla(${s}deg, 90%, 65%, ${l}%)`,t.fill(),t.restore();var e,a,i,o,n,s,l}(),window.requestAnimationFrame(e)})),c})();let confetti=new Confetti("heart");confetti.setCount(75),confetti.setSize(1),confetti.setPower(25),confetti.setFade(!1),confetti.destroyTarget(!0),$(document).ready((function(){$(".collapse.show").each((function(){$(this).prev(".card-header").find(".fa").addClass("fa-angle-up").removeClass("fa-angle-down")})),$(".collapse").on("show.bs.collapse",(function(){$(this).prev(".card-header").find(".fa").removeClass("fa-angle-down").addClass("fa-angle-up")})).on("hide.bs.collapse",(function(){$(this).prev(".card-header").find(".fa").removeClass("fa-angle-up").addClass("fa-angle-down")}))}));var first_time_bars=1;$(".video-status").on("click",(function(){if(!$(this).find(".s-video-playing").get(0)){var e=$(".s-video-playing");e.length>0&&e.get(0).pause();let t=$(this).siblings(".video-wrapper").find(".s-video").get(0);t.play(),$(this).css("display","none"),t.setAttribute("controls","true"),t.classList.add("s-video-playing"),$(".s-video-playing").on("ended",(function(e){$(this).removeAttr("controls"),$(this).removeClass("s-video-playing"),$(this).closest(".video-wrapper").siblings(".video-status").css("display","block")})).on("pause",(function(e){$(this).removeAttr("controls"),$(this).removeClass("s-video-playing"),$(this).closest(".video-wrapper").siblings(".video-status").css("display","block")}))}}));let e=!1,s=0,i={};function a(e){$(".usecase-mask").animate({scrollLeft:e},300)}function t(){e?($(".home-hero").removeClass("heroplay"),$(".g2-badge-section").removeClass("move-down")):($(".home-hero").addClass("heroplay"),$(".g2-badge-section").addClass("move-down")),i["ha-1"].initiate(),e?($("#ha-1").get(0).pause(),$("#ha-1").get(0).currentTime=0,$("#hm-1").get(0).pause(),$("#hm-1").get(0).currentTime=0,e=!e):($("#ha-1").get(0).play(),$("#ha-1").on("ended",(function(e){$("#hm-1").get(0).pause(),$("#hm-1").get(0).currentTime=0,$(".voice-head-images").removeClass("zoom"),$(".volume-indicator").animate({opacity:0},.2),s=0})).on("pause",(function(e){$(".voice-head-images").removeClass("zoom"),$(".volume-indicator").animate({opacity:0},.2),s=0})).on("timeupdate",(function(e){let t=$("#ha-1").get(0).currentTime;t>2.5&&t<3.5&&0==s?($("#hero-voice-1").find(".voice-head-images").addClass("zoom"),$("#hero-voice-1").find(".volume-indicator").delay(300).animate({opacity:1},.2),s++):t>24.5&&t<25.5&&1==s?($("#hero-voice-1").find(".volume-indicator").animate({opacity:0},.2),$("#hero-voice-1").find(".voice-head-images").removeClass("zoom"),$("#hero-voice-2").find(".voice-head-images").addClass("zoom"),$("#hero-voice-2").find(".volume-indicator").delay(300).animate({opacity:1},.2),s++):t>52.5&&t<53.5&&2==s?($("#hero-voice-2").find(".volume-indicator").animate({opacity:0},.2),$("#hero-voice-2").find(".voice-head-images").removeClass("zoom"),$("#hero-voice-3").find(".voice-head-images").addClass("zoom"),$("#hero-voice-3").find(".volume-indicator").delay(300).animate({opacity:1},.2),s++):t>70.5&&t<71.5&&3==s?($("#hero-voice-3").find(".volume-indicator").animate({opacity:0},.2),$("#hero-voice-3").find(".voice-head-images").removeClass("zoom"),$("#hero-voice-4").find(".voice-head-images").addClass("zoom"),$("#hero-voice-4").find(".volume-indicator").delay(300).animate({opacity:1},.2),s++):t>87.5&&t<88.5&&4==s&&($("#hero-voice-4").find(".volume-indicator").animate({opacity:0},.2),$("#hero-voice-4").find(".voice-head-images").removeClass("zoom"),$("#hero-voice-5").find(".voice-head-images").addClass("zoom"),$("#hero-voice-5").find(".volume-indicator").delay(300).animate({opacity:1},.2),s++)})),$("#hm-1").get(0).play(),e=!e)}$(document).ready((function(){$(".usecase-block").each((function(e,t){t.id="uc-"+e})),$(".usecase-container").prepend("<div class='spacer'></div>"),$(".usecase-container").append("<div class='spacer'></div>"),[...document.querySelectorAll(".usecase-audio")].forEach((e=>{e.getAttribute("id")}));$(".home-hero-audio").attr("id")})),$(".usecase-block").on("click",(function(){init_bars();var i=1152,o=$(".usecase-mask").width(),n=305;$(window).width()<479&&(n=.9*$(window).width()-120);var s=parseInt($(this).attr("id").replace(/uc-/,""),10),r=$(".usecase-block").hasClass("expand");if((i+=n)>o)var l=Math.floor((o-n)/144);$(this).siblings(".usecase-block").removeClass("expand");var c=$(".usecase-audio");if($.each(c,(function(e,t){t&&t.pause()})),$(".uc-play").removeClass("uc-pause"),r=!1,$(this).toggleClass("expand"),r=!r,s+1>l){var d=144*(s+1)+n-o+12;setTimeout((function(){a(d)}),300,d)}else a(0);$(this).hasClass("expand")?($(this).find(".uc-play").addClass("uc-pause"),e&&t(),$(this).find(".usecase-audio").get(0).play(),$(this).find(".usecase-audio").on("ended",(function(e){$(this).closest(".uc-play").removeClass("uc-pause"),$(this).closest(".expand").toggleClass("expand"),r=!r})).on("pause",(function(e){$(this).closest(".uc-play").removeClass("uc-pause"),$(this).closest(".expand").toggleClass("expand"),r=!r}))):($(this).find(".uc-play").removeClass("uc-pause"),$(this).find(".usecase-audio").get(0).pause(),$(this).find(".usecase-audio").get(0).currentTime=0)})),$(".play-home").on("click",(function(e){t()})).on("focus",(function(e){e.preventDefault()}));let o=function(){let e=this.getAttribute("data-step-text");for(var t=0;t<c.length;t++){let a=c[t].getAttribute("data-step-image");a!=e?c[t].style.opacity="0":a==e&&(c[t].style.opacity="1")}},nn=document.getElementsByClassName("stepper-list-item"),c=document.getElementsByClassName("step-image-style");for(var d=0;d<nn.length;d++)nn[d].addEventListener("mouseenter",o,!1);let l=document.getElementsByClassName("voice-card");document.getElementsByClassName("voice-audio-player"),document.getElementById("seek-obj");let u=function(){let e=this.querySelector(".voice-audio-player"),t=this.querySelector(".c-play"),a=this.querySelector(".c-pause");a.style.display="block",t.style.display="none",e.getAttribute("id");let i=e.paused;!function(){let e=document.getElementsByClassName("voice-audio-player");document.getElementsByClassName(".cplay"),document.getElementsByClassName(".c-pause");for(let t=0;t<e.length;t++)if(!e[t].paused){e[t].pause();let a=l[t].querySelector(".c-play");l[t].querySelector(".c-pause").style.display="none",a.style.display="block"}}(),i&&(e.play(),this.classList.add("playing"),this.classList.remove("paused"),e.addEventListener("ended",(e=>{this.classList.remove("paused","playing"),a.style.display="none",t.style.display="block"})))};for(d=0;d<l.length;d++)l[d].addEventListener("click",u,!1);function init_bars(){if(1==first_time_bars){first_time_bars=0;for(let e=0;e<90;e++){const t=2*e+1,a=Math.floor(75*Math.random()+800),i=Math.floor(25*Math.random()+13);$(".usecase-ac-embed.w-embed > div").each((function(){this.innerHTML+=`<div class="bar-line" style="left:${t}px;animation-duration:${a}ms;height:${i}px"></div>`}))}}}function pciPortalPolicyConfirmation(e){$("#myModal4").modal("show")}function videoPlay(e){"use strict";var t=e.find(".js-videoIframe"),a=t.data("src");e.addClass("videoWrapperActive"),t.attr("src",a)}function videoStop(e){"use strict";if(e)t=e.find(".js-videoIframe");else{e=$(".js-videoWrapper");var t=$(".js-videoIframe")}e.removeClass("videoWrapperActive"),t.attr("src","")}function reveal(){for(var e=document.querySelectorAll(".reveal"),t=0;t<e.length;t++){var a=window.innerHeight;e[t].getBoundingClientRect().top<a-150?e[t].classList.add("active"):e[t].classList.remove("active")}}var currentButton;$(document).on("click",".js-videoPoster",(function(e){"use strict";e.preventDefault(),videoStop(),videoPlay($(this).closest(".js-videoWrapper"))})),window.addEventListener("scroll",reveal),$('input[type="checkbox"]').on("change",(function(){$('input[name="'+this.name+'"]').not(this).prop("checked",!1)}));var audioPlaying=!1,first_time_voice_modal=1,first_time_carusel=1,clicked_product="Revoicer",purchase_redir="https://revoicer.com/purchase/fe_redir.php";function dataPopupClosed(e){null==e||void 0!==e.id&&window.location.replace(purchase_redir+"?id="+e.id+"&prod="+clicked_product)}function dataPopupWebhookReceived(e){null==e||void 0!==e.id&&window.location.replace(purchase_redir+"?id="+e.id+"&prod="+clicked_product)}$(document).ready((function(){$(".buynow").on("click",(function(e){e.preventDefault(),fb_atc(27),clicked_product=$(this).attr("data-product-name"),purchase_redir=$(this).attr("data-redirect"),fastspring.builder.clean(),fastspring.builder.tag({source:$(this).attr("data-source")}),fastspring.builder.add($(this).attr("data-product-id")),fastspring.builder.checkout()})),$(".buyprotrial").on("click",(function(e){e.preventDefault(),fb_atc(27),clicked_product="Revoicer PRO",purchase_redir="https://revoicer.com/purchase/pro_redir.php",fastspring.builder.clean(),fastspring.builder.tag({source:"fe-trial"}),fastspring.builder.add("revoicer-pro-trial"),fastspring.builder.checkout()})),$(".buypro").on("click",(function(e){e.preventDefault(),fb_atc(27),clicked_product="Revoicer PRO",purchase_redir="https://revoicer.com/purchase/pro_redir.php",fastspring.builder.clean(),fastspring.builder.tag({source:"fe"}),fastspring.builder.add("revoicer-pro"),fastspring.builder.checkout()})),$(".buytrial").on("click",(function(e){e.preventDefault(),fb_atc(27),clicked_product="Revoicer",purchase_redir="https://revoicer.com/purchase/fe_redir.php",fastspring.builder.clean(),fastspring.builder.tag({source:"fe-trial"}),fastspring.builder.add("revoicer-trial"),fastspring.builder.checkout()})),$(".buystandard").on("click",(function(e){e.preventDefault(),fb_atc(27),clicked_product="Revoicer",purchase_redir="https://revoicer.com/purchase/fe_redir.php",fastspring.builder.clean(),fastspring.builder.tag({source:"fe"}),fastspring.builder.add("revoicer-37"),fastspring.builder.checkout()})),$(".buyagency").on("click",(function(e){e.preventDefault(),fb_atc(27),clicked_product="Revoicer AGENCY",purchase_redir="https://revoicer.com/purchase/agency_redir.php",fastspring.builder.clean(),fastspring.builder.tag({source:"fe"}),fastspring.builder.add("revoicer-agency"),fastspring.builder.checkout()})),$(".buyagencytrial").on("click",(function(e){e.preventDefault(),fb_atc(27),clicked_product="Revoicer AGENCY",purchase_redir="https://revoicer.com/purchase/agency_redir.php",fastspring.builder.clean(),fastspring.builder.tag({source:"fe-trial"}),fastspring.builder.add("revoicer-agency-trial"),fastspring.builder.checkout()})),$(".portfolio-inner").each((function(){var e=$(this).find(".voice_name").text().trim().replace("(pro)","");$(this).find("a").attr("data-src",e.toLowerCase()+"-normal2.mp3")})),$("#carouselExampleIndicators .col-lg-6").each((function(){var e=$(this).find(".voice_name").text().trim().replace("(pro)","");$(this).find(".audioBox-inn").each((function(){var t=$(this).find("span").text().trim();$(this).attr("data-src",e.toLowerCase()+"-"+t.toLowerCase()+".mp3")}))})),$("body").on("click",".top_button_play,.audioBox-inn,.audioPlayerpop,.mybutton3 a",(function(e){e.preventDefault();var t=$(this).attr("data-src");0==audioPlaying?(audio.src="sound/"+t,audioPlaying=!0,$(this).hasClass("audioPlayerpop")&&(audio_music.currentTime=0,audio_music.play())):currentButton==this&&1==audioPlaying?(audio.pause(),audio_music.pause(),audioPlaying=!1):currentButton!=this&&(audio.src="sound/"+t,currentButton.classList.toggle("paused"),$(this).hasClass("audioBox-inn")&&$(currentButton).find(".audioPlayerai").toggleClass("audioPlayerai-playing"),$(this).hasClass("audioPlayerpop")&&$(currentButton).find(".audioPlayerai2").toggleClass("audioPlayerai2-playing"),audioPlaying=!0),currentButton=this,$(this).find(".audioPlayerai").toggleClass("audioPlayerai-playing"),$(this).find(".audioPlayerai2").toggleClass("audioPlayerai2-playing"),currentButton.classList.toggle("paused")})),$(".carousel").on("touchstart",(function(e){const t=e.originalEvent.touches[0].pageX;$(this).one("touchmove",(function(e){const a=e.originalEvent.touches[0].pageX;Math.floor(t-a)>5?$(this).carousel("next"):Math.floor(t-a)<-5&&$(this).carousel("prev")})),$(this).on("touchend",(function(){$(this).off("touchmove")}))})),jQuery.event.special.touchstart={setup:function(e,t,a){this.addEventListener("touchstart",a,{passive:!t.includes("noPreventDefault")})}},jQuery.event.special.touchmove={setup:function(e,t,a){this.addEventListener("touchmove",a,{passive:!t.includes("noPreventDefault")})}},jQuery.event.special.wheel={setup:function(e,t,a){this.addEventListener("wheel",a,{passive:!0})}},jQuery.event.special.mousewheel={setup:function(e,t,a){this.addEventListener("mousewheel",a,{passive:!0})}},$("#myModal3").on("hidden.bs.modal",(function(e){1==audioPlaying&&(currentButton.classList.toggle("paused"),$(currentButton).find(".audioPlayerai").toggleClass("audioPlayerai-playing"),$(currentButton).find(".audioPlayerai2").toggleClass("audioPlayerai2-playing")),audio.pause(),audio_music.pause(),audioPlaying=!1})),$("#myModal3").on("shown.bs.modal",(function(e){1==audioPlaying&&(currentButton.classList.toggle("paused"),$(currentButton).find(".audioPlayerai").toggleClass("audioPlayerai-playing"),$(currentButton).find(".audioPlayerai2").toggleClass("audioPlayerai2-playing")),audio.pause(),audio_music.pause(),audioPlaying=!1;$(e.relatedTarget);if(1==first_time_voice_modal){first_time_voice_modal=0,$(".all_voices_list").empty();for(let e=0;e<voices_list.length;e++){var t="";"1"==voices_list[e].type&&(t='<img src="imageswebp/crown.webp" class="img-fluid mx-auto center-block crown" alt="crown" style="position:absolute; left:80%;top:5px; ">');var a="all_languages";voices_list[e].lang_name.includes("English")&&(a=" just_english");var i=`<div class="flagBoxpop ${a}">\n                                    \n                                            <div class="flagBoxpop-inner">\n                                            ${t}\n                                                <div class="row m-0">\n                                                    \n                                                    <div class="col-lg-3 col-md-3 col-2 align-self-center p-0">\n                                                        <img data-src="images/voices/${voices_list[e].voice_name.toLowerCase()}.jpg" class="img-fluid mx-auto lazyload d-block person" style="border-radius: 50%;" alt="person"> \n                                                    </div>\n                                                                \n                                                    <div class="col-lg-7 col-md-6 col-8 align-self-center">\n                                                        <p class="lg15 md14 sm12 xs14 AvertaStd-Bold lh140 black2">\n                                                            ${voices_list[e].voice_name} <span class="lg11 md11 sm10 xs12 AvertaStd-Regular titlebg lh120 mt2" style="color: #647ea5;">${voices_list[e].lang_name} </span>\n                                                        </p>\n                                                        <img src="imageswebp/soundimg.webp" class="img-fluid mr-auto d-block mt6 soundimg" alt="soundimg">\n                                                    </div>\n\n                                                    <div class="col-lg-2 col-md-3 col-2 align-self-center p-0">\n\n                                                        <div class="audioPlayer audioPlayerpop" data-src="sound_soft/${voices_list[e].voice_name}.mp3">\n                                                            <div class="audioPlayerai2">\n                                                                <div class="audioPlayerai2-playpause" title=""><a href="#" aria-label="Click to play text to voice audio"></a></div>\n                                                            </div>\n                                                        </div>\n\n                                                    </div>\n\n                                                </div>\n                                                \n                                            </div>\n                                    \n                                        </div>\n            `;$(".all_voices_list").append(i)}}$(e.relatedTarget).hasClass("only_english")?($(".just_english").removeClass("d-none"),$(".all_languages").addClass("d-none")):($(".just_english").removeClass("d-none"),$(".all_languages").removeClass("d-none"))}))}));
+</script>
+</body>
+</html>
